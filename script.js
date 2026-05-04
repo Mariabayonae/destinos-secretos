@@ -30,3 +30,51 @@ desc:"Pueblo alpino.",
 color:"#ddd6fe"
 }
 ];
+let index = 0;
+const card = document.getElementById("card");
+
+function load(){
+    const p = places[index];
+
+    document.body.style.background = p.color;
+
+    document.getElementById("img").src = p.img;
+    document.getElementById("title").textContent = p.title;
+    document.getElementById("titleBack").textContent = p.title;
+    document.getElementById("desc").textContent = p.desc;
+}
+
+card.onclick = ()=>card.classList.toggle("flipped");
+
+document.getElementById("next").onclick = ()=>{
+    index++;
+    if(index === places.length){
+        showGallery();
+        return;
+    }
+    card.classList.remove("flipped");
+    load();
+};
+
+document.getElementById("prev").onclick = ()=>{
+    if(index>0){
+        index--;
+        card.classList.remove("flipped");
+        load();
+    }
+};
+function showGallery(){
+    document.getElementById("app").style.display="none";
+
+    const g = document.getElementById("gallery");
+    g.style.display="flex";
+
+    places.forEach(p=>{
+        const d=document.createElement("div");
+        d.className="small";
+        d.innerHTML=`<img src="${p.img}" style="width:100%;height:100%;object-fit:cover;">`;
+        g.appendChild(d);
+    });
+}
+
+load();
