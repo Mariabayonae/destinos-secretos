@@ -1,4 +1,16 @@
 postal1
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Postales</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
 <section class="postcard-section">
   <img src="fotos/mesa.png" class="mesa-fondo">
  <div class="postcard-container">
@@ -17,3 +29,13 @@ postal1
   </div>
 
 </section>
+<script>
+const postcard = document.querySelector(".postcard");
+
+postcard.addEventListener("click", () => {
+  postcard.classList.toggle("flipped");
+});
+</script>
+
+</body>
+</html>
