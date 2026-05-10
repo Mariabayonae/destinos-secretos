@@ -1,19 +1,85 @@
-<div class="back">
-      <h2 id="titleBack"></h2>
-      <p id="desc"></p>
-    </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  </div>
-
-  <div class="buttons">
-    <button id="prev">Anterior</button>
-    <button id="next">Siguiente</button>
-  </div>
-
+<title>Destinos secretos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
+ <style>
+ *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+width: 100%;
+height: 100vh;
+overflow: hidden;
+font-family: 'Cormorant Garamond', serif;
+}
+#background-video{
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+object-fit: cover;
+z-index: -2;
+}
+.overlay{
+position: absolute;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.15);
+z-index: -1;
+}
+.button-container{
+position: absolute;
+bottom: 50px;
+left: 50%;
+transform: translateX(-50%);
+opacity: 0;
+transition: opacity 2s ease;
+}
+.button-container.show{
+opacity: 1;
+}
+.start-button{
+text-decoration: none;
+background-color: #c8a27b;
+color: #3f2c20;
+padding: 16px 42px;
+border-radius: 50px;
+font-family: 'Anton', sans-serif;
+font-size: 1.3rem;
+letter-spacing: 1px;
+box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+transition: 0.3s ease;
+}
+.start-button:hover{
+background-color: #b78d64;
+transform: scale(1.05);
+}
+</style>
+</head>
+<body>
+<video autoplay muted loop playsinline id="background-video"></video>
+<source src="video-multimedia.mp4" type="video/mp4">
+  </video>
+  <div class="overlay"></div>
+  <div class="button-container" id="buttonContainer"></div>
+  <a href="cesky.html" class="start-button">
+ Ver colección
+  </a>
 </div>
-
-<div id="gallery"></div>
-
-<script src="script.js"></script>
+<script>
+const buttonContainer = document.getElementById("buttonContainer");
+setTimeout(() => {
+  buttonContainer.classList.add("show");
+ }, 16000);
+</script> 
 </body>
 </html>
