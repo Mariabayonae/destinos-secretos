@@ -66,15 +66,19 @@ transform: scale(1.05);
 </style>
 </head>
 <body>
-<video autoplay muted loop playsinline id="background-video"></video>
-<source src="video-multimedia.mp4" type="video/mp4">
-  </video>
-  <div class="overlay"></div>
-  <div class="button-container" id="buttonContainer"></div>
-  <a href="cesky.html" class="start-button">
- Ver colección
-  </a>
+
+<video autoplay muted loop playsinline id="background-video">
+   <source src="video/video-multimedia.mp4" type="video/mp4">
+</video>
+
+<div class="button-container" id="buttonContainer">
+
+    <a href="cesky.html" class="start-button">
+       Ver colección
+    </a>
+
 </div>
+ 
 <script>
 const buttonContainer = document.getElementById("buttonContainer");
 setTimeout(() => {
