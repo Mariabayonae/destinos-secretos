@@ -1,34 +1,13 @@
-.postcard-section {
-position: relative;
-height: 100vh;
-overflow: hidden;
-}
-.mesa-fondo {
-position: absolute;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: 0;
-}
-.postcard-container {
-position:relative;
-z-index: 2;
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
-}
 .postcard {
-width: 320px;
-height: 420px;
-position: relative;
-transform-style: preserve-3d;
-transition: transform 0.8s;
-cursor: pointer;
+  width: 320px;
+  height: 420px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
 }
 .postcard.flipped {
-transform: rotateY(180deg);
+  transform: rotateY(180deg);
 }
 .front, .back {
   position: absolute;
@@ -37,18 +16,5 @@ transform: rotateY(180deg);
   backface-visibility: hidden;
 }
 .back {
-transform: rotateY(180deg);
-}
-.button-container {
-margin-top: 12px;
-}
-.start-button {
-text-decoration: none;
-background-color: #c8a27b;
-color: #3f2c20;
-padding: 16px 42px;
-border-radius: 50px;
-font-family: 'Anton', sans-serif;
-font-size: 1.3rem;
-box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  transform: rotateY(180deg);
 }
