@@ -1,2 +1,2 @@
 # viajando-por-el-mundo
-Son 5 postales mostrando destinos poco conocidos en el mundo, van a ver el nombre, foto del lugar y una pequeña descripción
+Este proyecto presenta una colección interactiva de postales inspiradas en destinos poco conocidos alrededor del mundo. Cada página muestra una postal diferente sobre una mesa vintage, permitiendo al usuario descubrir lugares escondidos a través de ilustraciones, descripciones y fotografías. La experiencia busca recrear la sensación de descubrir recuerdos de viaje a través de una estética inspirada en postales y cartas antiguas
