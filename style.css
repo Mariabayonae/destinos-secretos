@@ -22,12 +22,13 @@ justify-content: center;
 align-items: center;
 }
 .postcard{
- width: min(80vw, 600px);
- aspect-ratio: 148 / 105;
- position: relative;
- transform-style: preserve-3d;
- transition: transform 0.8s;
- cursor: pointer;
+ width: min(90vw, 750px);
+  height: auto;
+  aspect-ratio: 148 / 105;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  cursor: pointer;
 }
 
 .postcard.flipped {
@@ -55,16 +56,18 @@ left: 0;
 width: 100%;
 display: flex;
 justify-content: center;
+
+z-index:10000;
 }
 
 .start-button{
 text-decoration: none;
 background-color: #c8a27b;
 color: #3f2c20;
-padding: 16px 42px;
-border-radius: 50px;
+padding: 22px 65px;
+border-radius: 60px;
 font-family: 'Anton', sans-serif;
-font-size: 1.3rem;
+font-size: 1.9rem;
 letter-spacing: 1px;
 box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 transition: 0.3s ease;
