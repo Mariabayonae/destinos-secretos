@@ -38,11 +38,15 @@ z-index: -1;
 }
 .button-container{
 position: absolute;
-bottom: 50px;
+bottom: 80px;
 left: 50%;
 transform: translateX(-50%);
 opacity: 0;
 transition: opacity 2s ease;
+
+display: flex;
+justify-content: center;
+width:100%
 }
 .button-container.show{
 opacity: 1;
@@ -51,10 +55,10 @@ opacity: 1;
 text-decoration: none;
 background-color: #c8a27b;
 color: #3f2c20;
-padding: 16px 42px;
+padding: 18px 48px;
 border-radius: 50px;
 font-family: 'Anton', sans-serif;
-font-size: 1.3rem;
+font-size: 1.5rem;
 letter-spacing: 1px;
 box-shadow: 0 8px 25px rgba(0,0,0,0.25);
 transition: 0.3s ease;
