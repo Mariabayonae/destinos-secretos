@@ -1,80 +1,227 @@
-.postcard-section {
-  width: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-.mesa-fondo{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-.postcard-container{
-width: 100%; 
-height: 100%;
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 60px 0;
-}
-.postcard{
- width: min(90vw, 750px);
-  height: auto;
-  aspect-ratio: 148 / 105;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.8s;
-  cursor: pointer;
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #f7f5f2 0%, #ffffff 100%);
+  color:#1c1c1c;
+  overflow-x:hidden;
+  position:relative;
+  cursor:none; /* ocultamos cursor normal */
 }
 
-.postcard.flipped {
-  transform: rotateY(180deg);
-}
-.front, .back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.back {
-  transform: rotateY(180deg);
-}
-.front img,
-.back img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-.button-container{
-position: absolute;
-bottom: 40px;
-left: 0;
-width: 100%;
-display: flex;
-justify-content: center;
-
-z-index:10000;
+/* ✈️ AVIÓN SIGUIENDO EL MOUSE */
+.plane{
+  position: fixed;
+  top:0;
+  left:0;
+  font-size:24px;
+  pointer-events:none;
+  transform: translate(-50%, -50%);
+  z-index:9999;
 }
 
-.start-button{
-text-decoration: none;
-background-color: #c8a27b;
-color: #3f2c20;
-padding: 22px 65px;
-border-radius: 60px;
-font-family: 'Anton', sans-serif;
-font-size: 1.9rem;
-letter-spacing: 1px;
-box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-transition: 0.3s ease;
-display: inline-block;
+/* =========================
+   🌍 FONDO TEMÁTICO VIAJES
+========================= */
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    url("https://images.unsplash.com/photo-1524594154908-eddc3a2fdd9e"),
+    url("https://images.unsplash.com/photo-1500835556837-99ac94a94552");
+  background-size:cover;
+  background-position:center;
+  opacity:0.10;
+  z-index:-2;
 }
 
-.start-button:hover{
-background-color: #b78d64;
-transform: scale(1.05);
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background-image:
+    url("https://images.unsplash.com/photo-1526481280695-3c687fd5432c"),
+    url("https://images.unsplash.com/photo-1539650116574-75c0c6d73d75");
+  background-size:300px, 400px;
+  background-repeat:repeat;
+  background-position:top left, bottom right;
+  opacity:0.06;
+  z-index:-1;
+}
+
+/* =========================
+   📦 CONTENEDOR GENERAL
+========================= */
+
+.page{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+  position:relative;
+  z-index:1;
+}
+
+/* =========================
+   🧠 HEADER INDEX
+========================= */
+
+.header{
+  text-align:center;
+  padding:80px 20px 20px;
+  animation: fadeDown 1s ease forwards;
+  opacity:0;
+}
+
+.header h1{
+  font-family:'Anton', sans-serif;
+  font-size:4.8rem;
+  margin:0;
+  letter-spacing:3px;
+}
+
+.subtitle{
+  margin-top:10px;
+  font-size:1.1rem;
+  color:#666;
+  animation: fadeUp 1.2s ease forwards;
+  opacity:0;
+}
+
+/* =========================
+   📸 GALERÍA INDEX
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:18px;
+  margin-top:50px;
+}
+
+/* 🧱 TARJETAS */
+.card{
+  position:relative;
+  height:240px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+  transition:0.4s;
+  opacity:0;
+  transform:translateY(30px);
+  animation: cardIn 0.8s ease forwards;
+}
+
+/* IMAGEN */
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:0.4s;
+}
+
+/* HOVER */
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card:hover img{
+  transform:scale(1.05);
+}
+
+/* TEXTO SOBRE IMAGEN */
+.card::after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:45%;
+  background:linear-gradient(to top, rgba(0,0,0,0.35), transparent);
+}
+
+.label{
+  position:absolute;
+  bottom:12px;
+  left:14px;
+  font-family:'Anton', sans-serif;
+  font-size:1.4rem;
+  color:white;
+  text-shadow:0 3px 10px rgba(0,0,0,0.5);
+}
+
+/* =========================
+   🌍 PÁGINAS DE DESTINO
+========================= */
+
+.back{
+  display:inline-block;
+  margin:20px 0;
+  text-decoration:none;
+  color:#333;
+  font-weight:bold;
+}
+
+/* 🔥 FIX DEFINITIVO DEL TÍTULO */
+.title{
+  font-family:'Anton', sans-serif;
+  font-size:3.2rem;
+  margin:20px 0;
+  text-align:center;
+
+  color:#ffffff !important;
+}
+
+.hero-video{
+  width:100%;
+  border-radius:16px;
+  margin-bottom:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info{
+  font-size:1.1rem;
+  color:#444;
+  margin:20px 0 30px;
+  line-height:1.6;
+  text-align:justify;
+}
+
+.gallery-mini{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:12px;
+}
+
+.gallery-mini img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.3s;
+}
+
+.gallery-mini img:hover{
+  transform:scale(1.05);
+}
+
+/* =========================
+   🎬 ANIMACIONES
+========================= */
+
+@keyframes fadeDown{
+  from{opacity:0; transform:translateY(-30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes cardIn{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
