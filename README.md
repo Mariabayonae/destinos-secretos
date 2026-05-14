@@ -1,2 +1,5 @@
-# viajando-por-el-mundo
-Este proyecto presenta una colección interactiva de postales inspiradas en destinos poco conocidos alrededor del mundo. Cada página muestra una postal diferente sobre una mesa vintage, permitiendo al usuario descubrir lugares escondidos a través de ilustraciones, descripciones y fotografías. La experiencia busca recrear la sensación de descubrir recuerdos de viaje a través de una estética inspirada en postales y cartas antiguas
+Este proyecto es una colección interactiva de página web dedicada a diferentes destinos turísticos alrededor del mundo. Cada destino cuenta con su propia página donde se combinan videos, fotografías y descripciones de forma dinámica mediante botones.
+
+El objetivo es ofrecer una experiencia visual atractiva e informativa, donde el usuario pueda explorar cada lugar de manera sencilla y clara.
+
+El proyecto inició como una idea de “postales de viaje”, pero evolucionó hacia un formato más moderno e interactivo. Las imágenes tipo postal se conservaron como referencia visual, pero se integraron en una experiencia más funcional con contenido multimedia y navegación dinámica.
