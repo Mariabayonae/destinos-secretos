@@ -30,7 +30,7 @@
     </div>
       </div>
 
-<div class="button-container">
+<div class="button-container active">
       <a href="#" class="start-button">Ver más</a>
     </div>
 
@@ -53,15 +53,25 @@
 </div>
 
 <div class="button-container">
-  <a href="#" class="start-button">Ver más</a>
+  <a href="javascript:void(0)" class="start-button">Ver más</a>
 </div>
 
 <script>
-const postcard = document.querySelector(".postcard");
+  const postals = document.querySelectorAll(".postcard-container");
+let index = 0;
 
-postcard.addEventListener("click", () => {
-  postcard.classList.toggle("flipped");
-});
+postals.forEach((postal) => {
+  postal.addEventListener("click", () => {
+    
+    postals[index].classList.remove("active");
+
+    index++;
+
+    if (index >= postals.length) {
+      index = 0;
+    }
+
+    postals[index].classList.add("active");
 </script>
 
 </body>

@@ -1,96 +1,98 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Destinos secretos</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Cormorant+Garamond:wght@300;400;500&display=swap" rel="stylesheet">
- <style>
- *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body{
-width: 100%;
-height: 100vh;
-overflow: hidden;
-font-family: 'Cormorant Garamond', serif;
-}
-#background-video{
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-object-fit: cover;
-z-index: -2;
-}
-.overlay{
-position: absolute;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.15);
-z-index: -1;
-}
-.button-container{
-position: absolute;
-bottom: 80px;
-left: 50%;
-transform: translateX(-50%);
-opacity: 0;
-transition: opacity 2s ease;
+<title>Destinos Secretos</title>
 
-display: flex;
-justify-content: center;
-width:100%
-}
-.button-container.show{
-opacity: 1;
-}
-.start-button{
-text-decoration: none;
-background-color: #c8a27b;
-color: #3f2c20;
-padding: 18px 48px;
-border-radius: 50px;
-font-family: 'Anton', sans-serif;
-font-size: 1.5rem;
-letter-spacing: 1px;
-box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-transition: 0.3s ease;
-}
-.start-button:hover{
-background-color: #b78d64;
-transform: scale(1.05);
-}
-</style>
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-<video autoplay muted loop playsinline id="background-video">
-   <source src="videos/video-multimedia.mp4" type="video/mp4">
-</video>
+<div class="page">
 
-<div class="button-container" id="buttonContainer">
+  <!-- 🧠 TÍTULO -->
+  <header class="header">
 
-    <a href="postales.html" class="start-button">
-       Ver colección
+    <h1>DESTINOS SECRETOS</h1>
+<p class="subtitle">
+      Descubre lo inimaginable
+    </p>
+
+  </header>
+
+  <!-- 📸 GALERÍA -->
+  <section class="gallery">
+
+    <!-- 🌍 LAKE BLED -->
+    <a class="card" href="bled.html">
+
+      <img src="fotos/bled-portada.jpg">
+
+      <div class="label">Lake Bled</div>
+
+    </a>
+      <!-- 🏯 SHIRAKAWA-GO -->
+    <a class="card" href="shirakawa.html">
+
+      <img src="fotos/shirakawa-portada.jpg">
+
+      <div class="label">Shirakawa-go</div>
+
+    </a>
+     <!-- 🏔️ AYSÉN -->
+    <a class="card" href="aysen.html">
+
+      <img src="fotos/aysen-portada.jpg">
+
+      <div class="label">Aysén</div>
+
     </a>
 
+    <!-- 🌊 LENÇÓIS MARANHENSES -->
+    <a class="card" href="lencois.html">
+
+      <img src="fotos/lencois-portada.jpg">
+
+      <div class="label">Lençóis Maranhenses</div>
+
+    </a>
+
+    <!-- 🌫️ GÁSADALUR -->
+    <a class="card" href="gasadalur.html">
+
+      <img src="fotos/gasadalur-portada.jpg">
+
+      <div class="label">Gásadalur</div>
+
+    </a>
+
+  </section>
+
 </div>
- 
+
+<!-- ✈️ AVIÓN -->
+<div class="plane">✈️</div>
+
 <script>
-const buttonContainer = document.getElementById("buttonContainer");
-setTimeout(() => {
-  buttonContainer.classList.add("show");
- }, 16000);
-</script> 
+
+const plane = document.querySelector(".plane");
+
+document.addEventListener("mousemove", (e) => {
+
+  plane.style.left = e.clientX + "px";
+  plane.style.top = e.clientY + "px";
+
+});
+
+</script>
+
 </body>
 </html>
-
 
 
